@@ -10,10 +10,12 @@
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+<h2>Log in/register</h2>
 Username: <input name="username" id="username"/>
 Password: <input name="password" type="password" id="password" />
 <button id="login">Log in</button>
 <button id="register">Register</button>
+<h2>search</h2>
 <input type="text" id="keyword" placeholder="keyword">
 <select id="type">
     <option value="">All</option>
@@ -26,6 +28,18 @@ Password: <input name="password" type="password" id="password" />
 </select>
 <button id="search"> Search</button>
 <div id="searchResults"></div>
+<h2>Add a new venue</h2>
+<input type="text" id="newVenueName" placeholder="Name...">
+<textarea type="textarea" id="newVenueDesc" placeholder="description..."maxlength="255"></textarea>
+<select id="newVenueType">
+    <option value="Restaurant">Restaurant</option>
+    <option value="fastfood">Fast Food</option>
+    <option value="Bar">Bar</option>
+    <option value="coffeeshop">Coffee Shop</option>
+    <option value="pub">Pub</option>
+    <option value="club">Club</option>
+</select>
+<button id="addNewVenue">Add</button>
 <script src="js/main.js"></script>
 </body>
 </html>

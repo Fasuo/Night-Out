@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $keyword = '%'.$_POST["keyword"].'%';
 $type = '%'.$_POST["type"].'%';
 $conn = new PDO("mysql:host=localhost;dbname=assign118;", "assign118","ao9ZeeJa");
