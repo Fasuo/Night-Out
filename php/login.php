@@ -16,6 +16,8 @@ if($row=$results->fetch())
     else{
         echo "wrong password";
     }
+}else{
+    echo "wrong username/password";
 }
 
 ?>

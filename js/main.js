@@ -1,6 +1,13 @@
 document.getElementById("login").addEventListener("click", login);
 document.getElementById("register").addEventListener("click", register);
 document.getElementById("search").addEventListener("click", search);
+function sessionStart(){
+    $.ajax({
+        url: "php/startSession.php",
+        type: "POST",
+    });
+}
+sessionStart();
 function login(){
     let username= document.getElementById("username").value;
     let password= document.getElementById("password").value;
