@@ -27,10 +27,23 @@ Password: <input name="password" type="password" id="password" />
     <option value="club">Club</option>
 </select>
 <button id="search"> Search</button>
-<div id="searchResults"></div>
+<ul id="searchResults">
+</ul>
+<div id="currentlySelected">
+    <h2 id="currentlySelectedName"></h2>
+    <h3 id="currentlySelectedType"></h3>
+    <p id="currentlySelectedDesc"></p>
+    <h3 id="currentlySelectedRecommendations"></h3>
+    <button id="currentlySelectedRecommend" value="">Recommend</button>
+    <h2>Reviews</h2>
+    <ul id="currentlySelectedReviews"></ul>
+    <h2>Review this venue</h2>
+    <textarea id="venueReview" maxlength="255"></textarea>
+    <button id="currentlySelectedReview" value="">Review</button>
+</div>
 <h2>Add a new venue</h2>
 <input type="text" id="newVenueName" placeholder="Name...">
-<textarea type="textarea" id="newVenueDesc" placeholder="description..."maxlength="255"></textarea>
+<textarea type="textarea" id="newVenueDesc" placeholder="description..." maxlength="255"></textarea>
 <select id="newVenueType">
     <option value="Restaurant">Restaurant</option>
     <option value="fastfood">Fast Food</option>
