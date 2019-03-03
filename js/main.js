@@ -24,7 +24,14 @@ function login(){
             password: password
         },
         success: function (data) {
-            console.log(data)
+            console.log(data);
+            document.getElementById('approveReviews').innerHTML=data;
+            document.querySelectorAll(".approveReview").forEach(function(elem) {
+                elem.addEventListener("click", function() {
+                    approveReview(this.id);
+                    console.log(this.id);
+                });
+            });
         },
         error: function (data) {
             console.log(data)
@@ -177,6 +184,22 @@ function reviewVenue() {
         success: function (data) {
             console.log(data);
             venueDetails(venueId)
+        },
+        error: function (data) {
+            console.log(data)
+        }
+    });
+}
+function approveReview(id) {
+    let reviewId = id.replace( /^\D+/g, '');
+    $.ajax({
+        url: "php/approveReviews.php",
+        type: "POST",
+        data: {
+            id: reviewId
+        },
+        success: function (data) {
+            console.log(data);
         },
         error: function (data) {
             console.log(data)

@@ -12,7 +12,21 @@ if($row=$results->fetch())
     if ($row["password"]==$pw){
         $_SESSION["gatekeeper"] = $un;
         $_SESSION["isadmin"]= $row["isadmin"];
-        echo $_SESSION["gatekeeper"];
+
+        if ($_SESSION["isadmin"]==1){
+            $results = $conn->prepare("select * from reviews where approved=0");
+            $results->execute();
+            while($row=$results->fetch())
+            {
+//                echo $row["review"].$row["username"];
+                echo "<tr>";
+                echo "<td>".$row["review"]."</td>";
+                echo "<td>".$row["username"]."</td>";
+                echo "<td><button class=approveReview id=approve".$row["ID"].">Approve</button></td>";
+                echo "</tr>";
+
+            }
+        }
     }
     else{
         echo "wrong password";

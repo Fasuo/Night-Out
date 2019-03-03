@@ -11,7 +11,6 @@ $results->execute();
 
 while($row=$results->fetch())
 {
-
     echo $row["name"].":".$row["ID"].",";
 }
 
