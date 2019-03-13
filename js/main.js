@@ -1,16 +1,10 @@
-document.getElementById("login").addEventListener("click", login);
-document.getElementById("register").addEventListener("click", register);
-document.getElementById("search").addEventListener("click", search);
-document.getElementById("addNewVenue").addEventListener("click", addNewVenue);
-document.getElementById("currentlySelectedRecommend").addEventListener("click", recommendVenue);
-document.getElementById("currentlySelectedReview").addEventListener("click", reviewVenue);
-function sessionStart(){
-    $.ajax({
-        url: "php/startSession.php",
-        type: "POST",
-    });
-}
-sessionStart();
+
+// document.getElementById("login").addEventListener("click", login);
+// document.getElementById("register").addEventListener("click", register);
+// document.getElementById("search").addEventListener("click", search);
+// document.getElementById("addNewVenue").addEventListener("click", addNewVenue);
+// document.getElementById("currentlySelectedRecommend").addEventListener("click", recommendVenue);
+// document.getElementById("currentlySelectedReview").addEventListener("click", reviewVenue);
 
 
 function login(){
@@ -25,13 +19,13 @@ function login(){
         },
         success: function (data) {
             console.log(data);
-            document.getElementById('approveReviews').innerHTML=data;
-            document.querySelectorAll(".approveReview").forEach(function(elem) {
-                elem.addEventListener("click", function() {
-                    approveReview(this.id);
-                    console.log(this.id);
-                });
-            });
+            // document.getElementById('approveReviews').innerHTML=data;
+            // document.querySelectorAll(".approveReview").forEach(function(elem) {
+            //     elem.addEventListener("click", function() {
+            //         approveReview(this.id);
+            //         console.log(this.id);
+            //     });
+            // });
         },
         error: function (data) {
             console.log(data)
