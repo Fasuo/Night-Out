@@ -1,21 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Night out</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-<h2>Log in/register</h2>
-Username: <input name="username" id="username"/>
-Password: <input name="password" type="password" id="password" />
-<button id="login">Log in</button>
-<button id="register">Register</button>
-<h2>search</h2>
+
+<?php
+if (isset($_SESSION['username'])){
+    echo '<h2>search</h2>
 <input type="text" id="keyword" placeholder="keyword">
 <select id="type">
     <option value="">All</option>
@@ -26,7 +12,7 @@ Password: <input name="password" type="password" id="password" />
     <option value="pub">Pub</option>
     <option value="club">Club</option>
 </select>
-<button id="search"> Search</button>
+<button id="search" onclick="search()"> Search</button>
 <ul id="searchResults">
 </ul>
 <div id="currentlySelected">
@@ -34,12 +20,12 @@ Password: <input name="password" type="password" id="password" />
     <h3 id="currentlySelectedType"></h3>
     <p id="currentlySelectedDesc"></p>
     <h3 id="currentlySelectedRecommendations"></h3>
-    <button id="currentlySelectedRecommend" value="">Recommend</button>
+    <button onclick="recommendVenue(this.value)"  id="currentlySelectedRecommend" value="">Recommend</button>
     <h2>Reviews</h2>
     <ul id="currentlySelectedReviews"></ul>
     <h2>Review this venue</h2>
     <textarea id="venueReview" maxlength="255"></textarea>
-    <button id="currentlySelectedReview" value="">Review</button>
+    <button onclick="reviewVenue(this.value)" id="currentlySelectedReview" value="">Review</button>
 </div>
 <h2>Add a new venue</h2>
 <input type="text" id="newVenueName" placeholder="Name...">
@@ -52,8 +38,7 @@ Password: <input name="password" type="password" id="password" />
     <option value="pub">Pub</option>
     <option value="club">Club</option>
 </select>
-<button id="addNewVenue">Add</button>
-<table id="approveReviews"></table>
-<script src="js/main.js"></script>
-</body>
-</html>
+<button onclick="addNewVenue()" id="addNewVenue">Add</button>';
+}
+?>
+<script src="js/user.js"></script>
