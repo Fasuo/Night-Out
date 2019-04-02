@@ -1,0 +1,24 @@
+#searchResults li{
+    list-style-type: none;
+    padding: 3px;
+}
+#searchResults li a{
+    font-size: 2em;
+    padding: 10px;
+    background-color: #afd6ff;
+    text-decoration: none;
+    color: #333333;
+    display: inline-block;
+    width: 100%;
+}
+#searchResults li a:hover {
+    background-color: #3c67ff;
+}
+#currentlySelected{
+    display: none;
+}
+.line{
+    border: #333333 solid 1px;
+    width: 100%;
+    margin: 10px 0;
+}

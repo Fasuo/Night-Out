@@ -1,9 +1,6 @@
 <?php
 session_start();
 require('components/header.php');
-?>
-
-<?php
 if (isset($_SESSION['username'])){
     require ('components/user.php');
     if ($_SESSION["isadmin"]==1){

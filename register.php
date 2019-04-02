@@ -2,7 +2,7 @@
 session_start();
 $un = htmlentities($_POST["username"]);
 $pw = htmlentities($_POST["password"]);
-$conn = new PDO("mysql:host=localhost;dbname=assign118;", "assign118", "ao9ZeeJa");
+$conn = new PDO("mysql:host=localhost;dbname=assign118;", "assing118", "ao9ZeeJa");
 $results = $conn->prepare("select name from users where name = ?");
 $results->bindParam(1,$un);
 $results->execute();

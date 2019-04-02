@@ -12,9 +12,6 @@ function login(){
         },
         success: function (data) {
             location.reload();
-        },
-        error: function (data) {
-            console.log(data)
         }
     });
 }
@@ -27,12 +24,6 @@ function register(){
         data: {
             username: username,
             password: password
-        },
-        success: function (data) {
-            console.log(data)
-        },
-        error: function (data) {
-            console.log(data)
         }
     });
 }

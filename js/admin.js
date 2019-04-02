@@ -4,12 +4,6 @@ function approveReview(reviewId) {
         type: "POST",
         data: {
             id: reviewId
-        },
-        success: function (data) {
-            console.log(data);
-        },
-        error: function (data) {
-            console.log(data)
         }
     });
 }

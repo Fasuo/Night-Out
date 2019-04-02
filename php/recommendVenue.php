@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (isset ($_SESSION["username"])) {
-    $id = $_POST["id"];
-    $conn = new PDO("mysql:host=localhost;dbname=assign118;", "root");
+    $id = htmlentities($_POST["id"]);
+    $conn = new PDO("mysql:host=localhost;dbname=assign118;", "assign118", "ao9ZeeJa");
     $results = $conn->prepare("select recommended from venues where ID=?");
     $results->bindParam(1,$id);
     $results->execute();
@@ -14,5 +14,4 @@ if (isset ($_SESSION["username"])) {
     $results->bindParam(1,$recommended);
     $results->bindParam(2,$id);
     $results->execute();
-    echo $recommended;
 }
